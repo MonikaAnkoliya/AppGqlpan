@@ -60,14 +60,16 @@ function getAllCases(str) {
     return testCase
 }
 
-function findTotalNoOfFlipinEachCase(str) {
-    console.log('INPUT STRING::::',str)
+export function findTotalNoOfFlipinEachCase(str) {
+    //console.log('INPUT STRING::::',str)
     const inputData = getAllCases(str);
-    const totalNoOfCase = inputData[0];
+	const totalNoOfCase = inputData[0];
+	const result = [];
     for(let i=0; i<totalNoOfCase; i++) {
-        console.log(`CASE #${i+1} = ${flipPancakes(inputData[i+1],false)}`);
+		//console.log(`CASE #${i+1} = ${flipPancakes(inputData[i+1],false)}`);
+		result.push(`CASE #${i+1} = ${flipPancakes(inputData[i+1],false)}`);
     }  
-    return 'Complete';
+    return result;
 }
 
 // let case1 = flipPancakes("---+-++-3",false);
@@ -77,4 +79,5 @@ function findTotalNoOfFlipinEachCase(str) {
 // let case3 = flipPancakes("-+-+-4",false);
 // console.log(case3);
 // console.log('===========');
-console.log(findTotalNoOfFlipinEachCase('3---+-++-3+++++4-+-+-4'));
+//console.log(findTotalNoOfFlipinEachCase('3---+-++-3+++++4-+-+-4'));
+

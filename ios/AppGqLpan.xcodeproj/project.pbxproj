@@ -194,7 +194,6 @@
 				9E402338FF635ADD9ED88539 /* Pods-AppGqLpan-tvOSTests.debug.xcconfig */,
 				82DD1B9E5B01046DFB46A7E3 /* Pods-AppGqLpan-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
