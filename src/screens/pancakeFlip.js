@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, TextInput, Button, Text, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, TextInput, Button, Text, FlatList, SafeAreaView } from 'react-native';
 import { findTotalNoOfFlipinEachCase } from '../actions/getPancakeFlipCount';
 
 function PancakeFlip() {

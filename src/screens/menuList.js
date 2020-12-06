@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Text, StyleSheet, TouchableOpacity, SafeAreaView, FlatList } from 'react-native'
 import { useNavigation } from "@react-navigation/native"
 import {
@@ -36,6 +36,7 @@ function MenuList(props) {
         <TouchableOpacity onPress={() => navigate('Pancake')}>
           <Text style={styles.boldText}>Pancake Problem Algo</Text>
         </TouchableOpacity>
+        <Text style={styles.boldText}>-: List of Menu :-</Text>
         {!loading && data.menu.length >0 && <FlatList
                   data={data.menu}
                   renderItem={renderItem}
