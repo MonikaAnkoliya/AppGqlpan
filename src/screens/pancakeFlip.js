@@ -55,7 +55,7 @@ function PancakeFlip() {
     },
     testInput: { 
         height: 40,
-        width: Dimensions.get('window').width - 20,
+        width: Dimensions.get('window').width - 40,
         marginTop: 20,
         borderColor: 'gray',
         borderWidth: 1,

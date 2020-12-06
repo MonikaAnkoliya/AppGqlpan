@@ -1,11 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, Dimensions, View, StyleSheet, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 function Header({onPress}) {
     return (
         <View style={styles.headerWrap}>
           <TouchableOpacity onPress={onPress}>
-            <Text style={{color:'#000'}}>test</Text>
+            <Icon name="bars" size={25} color="#000" />
           </TouchableOpacity>
         </View>
     )
@@ -13,10 +15,11 @@ function Header({onPress}) {
   
   const styles = StyleSheet.create({
     headerWrap: {
-        height: 45,
+        height: 65,
         backgroundColor: '#FFF',
         width: Dimensions.get('window').width,
-        padding: 15
+        padding: 20,
+        paddingLeft: 25
     }
   })
   
