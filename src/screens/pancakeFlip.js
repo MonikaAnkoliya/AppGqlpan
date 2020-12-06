@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
-import { StyleSheet, TextInput, Button, Text, FlatList, SafeAreaView } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+
+import { TouchableOpacity, Dimensions, View, StyleSheet, TextInput, StatusBar, Button, Text, FlatList, SafeAreaView } from 'react-native';
 import { findTotalNoOfFlipinEachCase } from '../actions/getPancakeFlipCount';
+import Header from '../commonComponents/headerComponent'
 
 function PancakeFlip() {
     const [value, onChangeText] = useState('');
     const [result, setResult] = useState([]);
+    const navigation = useNavigation();
 
     const onPressLearnMore = () => {
         const result = findTotalNoOfFlipinEachCase(value)
@@ -13,8 +17,9 @@ function PancakeFlip() {
     }
 
     return (
-      <SafeAreaView>
-          <TextInput
+      <SafeAreaView style={styles.container}>
+        <Header onPress={() => {navigation.openDrawer()}} />
+        <TextInput
             style={styles.testInput}
             onChangeText={text => onChangeText(text)}
             value={value}
@@ -38,9 +43,10 @@ function PancakeFlip() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#333',
+      backgroundColor: '#FFF',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      marginTop: StatusBar.height
     },
     boldText: {
       color: '#fff',
@@ -49,9 +55,10 @@ function PancakeFlip() {
     },
     testInput: { 
         height: 40,
+        width: Dimensions.get('window').width - 20,
+        marginTop: 20,
         borderColor: 'gray',
         borderWidth: 1,
-        margin:15,
         padding: 10
     }
   })

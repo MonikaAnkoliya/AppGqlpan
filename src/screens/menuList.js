@@ -1,14 +1,15 @@
 import React from 'react'
-import { Text, StyleSheet, TouchableOpacity, SafeAreaView, FlatList } from 'react-native'
+import { Text, StatusBar, StyleSheet, TouchableOpacity, SafeAreaView, View, FlatList } from 'react-native'
 import { useNavigation } from "@react-navigation/native"
 import {
   useQuery,
   gql
 } from "@apollo/client";
-
+import Header from '../commonComponents/headerComponent'
 
 function MenuList(props) {
   const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   const { loading, error, data } = useQuery(gql`
     {
@@ -33,6 +34,7 @@ function MenuList(props) {
 
   return (
     <SafeAreaView style={styles.container}>
+        <Header onPress={() => {navigation.openDrawer()}} />
         <TouchableOpacity onPress={() => navigate('Pancake')}>
           <Text style={styles.boldText}>Pancake Problem Algo</Text>
         </TouchableOpacity>
@@ -49,8 +51,9 @@ function MenuList(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
-    alignItems: 'center'
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    marginTop: StatusBar.height
   },
   boldText: {
     padding: 15,

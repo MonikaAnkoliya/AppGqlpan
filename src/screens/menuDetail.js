@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { StyleSheet, SafeAreaView, View, ActivityIndicator} from 'react-native';
-import { useRoute } from "@react-navigation/native";
+import { StyleSheet, StatusBar, SafeAreaView, View, ActivityIndicator} from 'react-native';
+import { useRoute, useNavigation } from "@react-navigation/native";
 import { WebView } from 'react-native-webview';
+import Header from '../commonComponents/headerComponent'
 
 function MenuDetail() {
   const route = useRoute();
+  const navigation = useNavigation();
+
   const [visible, setVisible] = useState(false);
 
   const ActivityIndicatorElement = () => {
@@ -14,10 +17,11 @@ function MenuDetail() {
       </View>
     );
   };
-
+  console.log('#####', route.params)
   const uri = route.params.uri;
     return (
     <SafeAreaView style={{ flex: 1 }}>
+      <Header onPress={() => {navigation.openDrawer()}} />
       <View style={styles.container}>
         <WebView
           style={{ flex: 1 }}
@@ -38,8 +42,9 @@ function MenuDetail() {
   
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#FFF',
       flex: 1,
+      marginTop: StatusBar.height
     },
     activityIndicatorStyle: {
       flex: 1,
