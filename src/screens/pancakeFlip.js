@@ -15,7 +15,7 @@ function PancakeFlip() {
     return (
       <SafeAreaView>
           <TextInput
-            style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin:15, padding: 10 }}
+            style={styles.testInput}
             onChangeText={text => onChangeText(text)}
             value={value}
             placeholder='Write an Input'
@@ -46,6 +46,13 @@ function PancakeFlip() {
       color: '#fff',
       fontSize: 24,
       fontWeight: 'bold'
+    },
+    testInput: { 
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        margin:15,
+        padding: 10
     }
   })
   
