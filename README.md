@@ -1,4 +1,4 @@
-# NewsFeed
+# Application with graphql and pancake problem solution
 Getting Started with [React-Native](https://reactnative.dev/), [React-Navigation](https://reactnavigation.org/), [Apollo Client](https://www.apollographql.com/docs/react/integrations/react-native/)
 
 ## Getting Started
